@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: ecommerce
+    schema: DE_PROJECT
+    database: BRAVE_DATABASE
+    tables:
+      - name: inventory
+        identifier: inventory_data
+      - name: product
+        identifier: product_data
+      - name: user
+        identifier: user_data
+      - name: journey
+        identifier: user_journey 
