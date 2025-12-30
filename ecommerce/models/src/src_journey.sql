@@ -12,7 +12,7 @@ SELECT
     has_purchase,
     product_id,
     cart_id,
-    sessio_id,
+    session_id,
     search_terms,
     search_type,
     user_id,

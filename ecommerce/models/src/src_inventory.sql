@@ -7,9 +7,9 @@ SELECT
     product_id,
     warehouse_id,
     stock_level,
-    restock_level,
+    reorder_level,
     supplier_id,
     storage_condition,
     quantity_in_stock,
-    avergae_monthly_demand
+    average_monthly_demand
 FROM raw_inventory
