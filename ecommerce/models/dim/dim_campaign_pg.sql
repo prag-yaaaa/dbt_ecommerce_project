@@ -1,6 +1,6 @@
 {{
     config(
-        materialized= 'view'
+        materialized= 'incremental'
     )
 }}
 WITH src_journey AS(

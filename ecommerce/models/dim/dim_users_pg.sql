@@ -1,6 +1,7 @@
 {{
     config(
-        materialized= 'view'
+        materialized= 'incremental',
+        unique_key='user_id'
     )
 }}
 WITH src_user AS(
@@ -10,7 +11,7 @@ SELECT
     user_id,
     first_name,
     last_name,
-    email,
+    CASE WHEN email not like '%_@__%.__%' THEN NULL ELSE email END AS email,
     signup_date,
     preferred_language,
     dob,
@@ -18,3 +19,4 @@ SELECT
     account_status,
     loyalty_points_balance
 FROM src_user
+WHERE account_status = 'active'
