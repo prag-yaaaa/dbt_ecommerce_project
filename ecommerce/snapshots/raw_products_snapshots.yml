@@ -1,0 +1,8 @@
+snapshots:
+  - name: scd_raw_products 
+    relation: source('ecommerce', 'product')
+    config:
+      unique_key : product_id
+      strategy: timestamp
+      updated_at: updated_at  
+      hard_deletes: invalidate 

@@ -1,0 +1,8 @@
+snapshots:
+  - name: scd_raw_users 
+    relation: source('ecommerce', 'user')
+    config:
+      unique_key : user_id
+      strategy: timestamp
+      updated_at: updated_at  
+      hard_deletes: invalidate 

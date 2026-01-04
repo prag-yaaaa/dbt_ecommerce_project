@@ -1,0 +1,77 @@
+models:
+# not null columns for fact_User_Engagement_pg
+  - name: fact_User_Engagement_pg
+    description: "Fact table capturing user engagement metrics."
+    columns:
+      - name: user_id
+        description: "Unique identifier for each user."
+        tests:
+          - not_null
+      - name: product_id
+        description: "Unique identifier for each product."
+        tests:
+          - not_null
+      - name: session_id
+        description: "Unique identifier for each user session."
+        tests:
+          - not_null
+      - name: timestamp
+        description: "Timestamp of the transaction."
+        tests:
+          - not_null
+      - name: has_qv
+        description: "Boolean Flag indicator if the user viewed the product."
+        tests: 
+          - accepted_values:
+              values: [true, false]
+      - name: has_pdp
+        description: "Boolean Flag indicator if the user visited the product detail page."
+        tests: 
+          - accepted_values:
+              values: [true, false]
+      - name: has_atc
+        description: "Boolean Flag indicator if the user added the product to cart."
+        tests: 
+          - accepted_values:
+              values: [true, false]
+      - name: has_purchase
+        description: "Boolean Flag indicator if the user purchased the product."
+        tests: 
+          - accepted_values:
+              values: [true, false]
+
+
+# not null columns for fact_user_transaction_pg
+  - name: fact_user_transaction_pg
+    description: "Fact table capturing user transaction details."
+    columns:
+      - name: user_id
+        description: "Unique identifier for each user."
+        tests:
+          - not_null
+      - name: session_id
+        description: "Unique identifier for each user session."
+        tests:
+          - not_null
+      - name: cart_id
+        description: "Unique identifier for each cart session."
+        tests:
+          - not_null
+      - name: timestamp
+        description: "Timestamp of the transaction."
+        tests:
+          - not_null
+      - name: search_event_id
+        description: "Unique identifier for each search event."
+        tests:
+          - not_null
+      - name: product_id
+        description: "Unique identifier for each product."
+        tests:
+          - not_null
+      - name: has_purchase
+        description: "Boolean Flag indicator if the user purchased the product."
+      - name: quantity_sold
+        description: "Quantity of the product purchased."
+      - name: total_amount
+        description: "Total amount spent on the product."
