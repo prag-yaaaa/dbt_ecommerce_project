@@ -4,5 +4,5 @@ snapshots:
     config:
       unique_key : user_id
       strategy: timestamp
-      updated_at: updated_at  
+      updated_at: signup_date  
       hard_deletes: invalidate 

@@ -3,6 +3,6 @@ snapshots:
     relation: source('ecommerce', 'product')
     config:
       unique_key : product_id
-      strategy: timestamp
-      updated_at: updated_at  
+      strategy: check 
+      check_cols: ['product_name', 'category', 'price']
       hard_deletes: invalidate 
